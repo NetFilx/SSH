@@ -24,7 +24,10 @@ public class User implements Serializable {
         this.userAge = userAge;
         this.userAddress = userAddress;
     }
-
+    
+    //注解建议加在get上
+    //原因： 使用Annotations形式的配置方式，默认的访问形式由@Id标记放置的位置决定，
+    //当@Id标记在属性上声明，而不是在getter方法上，则所有的其它属性默认采用属性访问形式（即不通过getter和setter方法，直接访问属性）
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "user_id", nullable = false)
